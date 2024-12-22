@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class AmstrongNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" Enter Your Nunber ");
+        int input = sc.nextInt();
+        int num = input;
+        int temp,count=0;
+        int res = input;
+        double sum=0;
+
+        //count the number of digit
+        while(num!=0){
+            num=num/10;
+            count++;
+        }
+
+        //amstrongNumber
+        while(input!=0){
+            temp =input%10;
+            sum+=Math.pow(temp,count);
+            input=input/10;
+        }
+
+        System.out.println("The Output is: "+sum);
+        System.out.println("The Given Input is: "+res);
+
+        if(sum==res){
+            System.out.println("Given number is a Amstrong number ");
+        }
+        else{
+            System.out.println("Given Number is not a Amstrong number ");
+        }
+
+
+    }
+}
